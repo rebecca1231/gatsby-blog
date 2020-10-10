@@ -23,7 +23,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <Head title="Blog"/>
-            <h1>Blog</h1>
+            <h1>Latest Articles</h1>
             <ol className={blogStyles.posts}>
                 {data.allContentfulBlogPost.edges.map((edge) => {
                     return (

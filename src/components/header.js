@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link, /*graphql, useStaticQuery*/ } from "gatsby"
+import rebLogo from "../rebLogo.jpg"
 
 import headerStyles from "./header.module.scss"
 
 const Header = () => {
-  const data = useStaticQuery(graphql`
+ /* const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
@@ -12,25 +13,16 @@ const Header = () => {
         }
       }
     }
-  `)
+  `)*/
 
   return (
     <header className={headerStyles.header}>
-      <h1>
-        <Link className={headerStyles.title} to="/">
-          {data.site.siteMetadata.title}
-        </Link>
-      </h1>
       <nav>
         <ul className={headerStyles.navList}>
           <li>
-            <a
-              className={headerStyles.navItem}
-              activeClassName={headerStyles.activeNavItem}
-              href="https://rebeccahirai.com"
-            >
-              Home
-            </a>
+            <Link className={headerStyles.title} to="/">
+              <img src={rebLogo} alt="logo" className={headerStyles.img} />
+            </Link>
           </li>
           <li>
             <Link
@@ -57,6 +49,15 @@ const Header = () => {
               href="https://rebeccahirai.com/contact"
             >
               Contact
+            </a>
+          </li>
+          <li>
+            <a
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              href="https://rebeccahirai.com"
+            >
+              Portfolio
             </a>
           </li>
         </ul>
