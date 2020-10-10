@@ -24,40 +24,40 @@ const Header = () => {
       <nav>
         <ul className={headerStyles.navList}>
           <li>
+            <a
+              className={headerStyles.navItem}
+              activeClassName={headerStyles.activeNavItem}
+              href="https://rebeccahirai.com"
+            >
+              Home
+            </a>
+          </li>
+          <li>
             <Link
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
               to="/"
             >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={headerStyles.navItem}
-              activeClassName={headerStyles.activeNavItem}
-              to="/blog"
-            >
               Blog
             </Link>
           </li>
           <li>
-            <Link
+            <a
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
-              to="/about"
+              href="https://rebeccahirai.com/about"
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className={headerStyles.navItem}
               activeClassName={headerStyles.activeNavItem}
-              to="/contact"
+              href="https://rebeccahirai.com/contact"
             >
               Contact
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
