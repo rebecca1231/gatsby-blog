@@ -3,7 +3,7 @@ require('dotenv').config({
   })
 module.exports = {
     siteMetadata: {
-        title: '',
+        title: "Rebecca's Blog",
         author: "Rebecca Hirai"
     },
     plugins: [
@@ -25,20 +25,20 @@ module.exports = {
             }
         },
         'gatsby-plugin-sharp',
-        {
-            resolve: 'gatsby-transformer-remark',
-            options: {
-                plugins: [
-                    'gatsby-remark-relative-images',
-                    {
-                        resolve: 'gatsby-remark-images',
-                        options: {
-                            maxWidth: 750,
-                            linkImagesToOriginal: false
-                        }
-                    }
-                ]
-            }
-        }
+        // { //for use with markdown files!
+        //     resolve: 'gatsby-transformer-remark',
+        //     options: {
+        //         plugins: [
+        //             'gatsby-remark-relative-images',
+        //             {
+        //                 resolve: 'gatsby-remark-images',
+        //                 options: {
+        //                     maxWidth: 750,
+        //                     linkImagesToOriginal: false
+        //                 }
+        //             }
+        //         ]
+        //     }
+        // }
     ]
 }
