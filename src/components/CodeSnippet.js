@@ -19,3 +19,6 @@ const CodeSnippet = ({ markdown }) => {
 };
 
 export default CodeSnippet;
+
+//this code is from:
+//https://techholding.co/blog/gatsby-contentful-code-snippets/

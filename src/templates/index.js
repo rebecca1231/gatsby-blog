@@ -1,13 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-// import { BLOCKS, MARKS } from "@contentful/rich-text-types"
-// import SyntaxHighlighter from "react-syntax-highlighter"
-// import { obsidian } from "react-syntax-highlighter/dist/esm/styles/hljs"
 
 import CodeSnippet from "../components/CodeSnippet"
 import Layout from "../components/layout"
 import Head from "../components/head"
+import './index.css'
 
 export const query = graphql`
   query($slug: String!) {
@@ -51,12 +49,3 @@ const Blog = props => {
 
 export default Blog
 
-/*
-renderNode: {
-      "embedded-asset-block": node => {
-        const alt = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
-        return <img alt={alt} src={url} />
-      },
-    },
-*/
