@@ -5,7 +5,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import CodeSnippet from "../components/CodeSnippet"
 import Layout from "../components/layout"
 import Head from "../components/head"
-import './index.css'
 
 export const query = graphql`
   query($slug: String!) {
