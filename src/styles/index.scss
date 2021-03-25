@@ -106,6 +106,7 @@ hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+ 
 }
 button,
 input,
@@ -146,7 +147,7 @@ button:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 fieldset {
-  border: 1px solid silver;
+  border: none;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -406,7 +407,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  background: hsla(0, 0%, 47%, 0.04);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
@@ -485,9 +486,9 @@ hr {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: calc(1.45rem - 1px);
-  background: hsla(0, 0%, 0%, 0.2);
-  border: none;
-  height: 1px;
+  background: #999999;
+  color: #999999;
+  height: 0.5px;
 }
 address {
   margin-left: 0;
@@ -623,3 +624,7 @@ pre tt:after {
     font-size: 100%;
   }
 }
+ a:focus, button:focus{
+   outline: #008891;
+   border: 1px solid #008891;
+ }
