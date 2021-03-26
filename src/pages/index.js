@@ -89,8 +89,40 @@ const IndexPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
-      
       <div className={blogStyles.space}>
+        <h1>Welcome. </h1>
+        <p>
+          Here is a collection of my articles. Some are tutorials, others are
+          thoughts on a topic.
+        </p>
+        <p>
+          You can search by keyword, peruse by date, or check out my featured
+          article.
+        </p>
+        <p>
+          I hope you'll feel free to kick off your shoes and stay a while. I'm
+          happy you're here.
+        </p>
+      </div>
+      <div className={blogStyles.space}>
+        <h2>Featured Article</h2>
+        <ol className={blogStyles.posts}>
+          <li className={blogStyles.post} key={featuredArticle[0].node.id}>
+            <Link to={`/${featuredArticle[0].node.slug}`}>
+              <h2>{featuredArticle[0].node.title}</h2>
+              <p>{featuredArticle[0].node.publishedDate}</p>
+            </Link>
+          </li>
+          <li>
+            This article describes and solves a classic data structures and
+            algorithm question.
+          </li>
+          <li>My solution focuses on Big 0 space and time optimization.</li>
+        </ol>
+      </div>
+
+      <div className={blogStyles.space}>
+        <div>
         <button
           className={blogStyles.searchbutton}
           onClick={() => setShowSearch(!showSearch)}
@@ -105,7 +137,8 @@ const IndexPage = () => {
           >
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
           </svg>
-        </button>
+        </button> 
+        </div>
         {showSearch && (
           <>
             <form>
@@ -124,40 +157,8 @@ const IndexPage = () => {
           </>
         )}
       </div>
-      <div className={blogStyles.space}>
-        <h1>Welcome. </h1>
-        <p>
-          Here is a collection of my articles. Some are tutorials, others are
-          thoughts on a topic.
-        </p>
-        <p>
-          You can search by keyword, peruse by date, or check out my featured
-          article.
-        </p>
-        <p>
-          I hope you'll feel free to kick off your shoes and stay a while. I'm
-          happy you're here.
-        </p>
-      </div>
-      <div className={blogStyles.space}>
-        <h1>Featured Article</h1>
-        <ol className={blogStyles.posts}>
-          <li className={blogStyles.post} key={featuredArticle[0].node.id}>
-            <Link to={`/${featuredArticle[0].node.slug}`}>
-              <h2>{featuredArticle[0].node.title}</h2>
-              <p>{featuredArticle[0].node.publishedDate}</p>
-            </Link>
-          </li>
-      
-        <li>
-          This article describes and solves a classic data structures and
-          algorithm question.
-        </li>
-        <li>My solution focuses on Big 0 space and time optimization.</li>
-        </ol>
-      </div>
-      
-      <h1>Latest Articles</h1>
+
+      <h2>Latest Articles</h2>
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map(edge => {
           return (
