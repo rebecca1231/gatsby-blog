@@ -15,6 +15,7 @@ const IndexPage = () => {
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
             id
+            keywords
           }
         }
       }
@@ -22,7 +23,7 @@ const IndexPage = () => {
   `)
   const slugObj = {}
   data.allContentfulBlogPost.edges.forEach(
-    ({ node }) => (slugObj[node.title] = node.slug.split("-"))
+    ({ node }) => (slugObj[node.title] = node.keywords.split("."))
   )
 
   const [results, setResults] = useState(null)
