@@ -29,7 +29,7 @@ const IndexPage = () => {
   const [showSearch, setShowSearch] = useState(false)
 
   const searchMethod = e => {
-    const term = e.target.value
+    const term = e.target.value.toLowerCase()
     const matchList = []
     if (term.length < 1) {
       return
