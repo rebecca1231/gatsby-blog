@@ -108,13 +108,15 @@ const IndexPage = () => {
       <div className={blogStyles.space}>
         <button
           className={blogStyles.feature}
-          onMouseEnter={() => {
+          onClick={() => {
+            setShowSparkles(!showSparkles)
+          }}
+          onMouseEnter={()=> {
             setShowSparkles(true)
           }}
-          onMouseLeave={() => setShowSparkles(false)}
         >
           {showSparkles ? (
-            <Sparkles>
+            <Sparkles style={{width:'100%'}}>
               <h2>Featured Article</h2>{" "}
             </Sparkles>
           ) : (
