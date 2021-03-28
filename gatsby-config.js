@@ -25,6 +25,15 @@ module.exports = {
                 path: `${__dirname}/src/`
             }
         },
+        {
+            resolve: `gatsby-plugin-nprogress`,
+            options: {
+              // Setting a color is optional.
+              color: `teal`,
+              // Disable the loading spinner.
+              showSpinner: true,
+            },
+          },
         'gatsby-plugin-sharp',
         // { //for use with markdown files!
         //     resolve: 'gatsby-transformer-remark',

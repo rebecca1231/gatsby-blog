@@ -21,7 +21,7 @@ const Header = () => {
         <ul className={headerStyles.navList}>
           <li>
             <Link className={headerStyles.title} to="/">
-              <img src={rebLogo} alt="logo" className={headerStyles.img} />
+              <img src={rebLogo} alt="R" className={headerStyles.img} />
             </Link>
           </li>
           <li>
