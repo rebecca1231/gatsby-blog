@@ -1,10 +1,11 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import blogStyles from "./index.module.scss"
 import Head from "../components/head"
 import Sparkles from "../components/sparkles/Sparkles"
+import OneSparkle from "../components/sparkles/OneSparkle"
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -31,9 +32,20 @@ const IndexPage = () => {
     ({ node }) => (slugObj[node.title] = node.keywords.split("."))
   )
 
+  useEffect(() => {
+    setTimeout(() => {
+      setWink(false)
+    }, 800)
+  })
+
   const [results, setResults] = useState(null)
   const [showSearch, setShowSearch] = useState(false)
   const [showSparkles, setShowSparkles] = useState(false)
+  const [wink, setWink] = useState(true)
+
+  const showWink = () => {
+    setWink(true)
+  }
 
   const searchMethod = e => {
     const term = e.target.value.toLowerCase()
@@ -91,7 +103,16 @@ const IndexPage = () => {
     <Layout>
       <Head title="Blog" />
       <div className={blogStyles.space}>
-        <h1>Welcome. </h1>
+        <button className={blogStyles.feature} onMouseEnter={() => showWink()}>
+          <h1>
+            Welcome
+            {wink && (
+              <span style={{ zIndex: 1 }}>
+                <OneSparkle size="30" />
+              </span>
+            )}
+          </h1>
+        </button>
         <p>
           Here is a collection of my articles. Some are tutorials, others are
           thoughts on a topic.
@@ -111,13 +132,13 @@ const IndexPage = () => {
           onClick={() => {
             setShowSparkles(!showSparkles)
           }}
-          onMouseEnter={()=> {
+          onMouseEnter={() => {
             setShowSparkles(true)
           }}
         >
           {showSparkles ? (
-            <Sparkles style={{width:'100%'}}>
-              <h2>Featured Article</h2>{" "}
+            <Sparkles>
+              <h2>Featured Article</h2>
             </Sparkles>
           ) : (
             <h2>Featured Article</h2>

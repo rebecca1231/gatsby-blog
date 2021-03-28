@@ -31,7 +31,7 @@
   border-radius: 3px;
   margin-right: 5px;
   border: 1px solid #999999;
-  padding: 7px;
+  padding: 10px;
   background-color: #fff;
   display: block;
   width: 90%;
@@ -39,6 +39,7 @@
 
 .searchbar:focus, .post:focus {
   outline-color: #008891;
+
 }
 
 .searchbutton {
@@ -69,5 +70,6 @@
   padding: none;
   margin-left: -5px;
   text-align: start;
-  max-width: 500px;
+  width: 500px;
+  cursor: pointer;
 }
