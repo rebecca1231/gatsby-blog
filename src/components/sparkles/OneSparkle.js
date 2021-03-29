@@ -7,7 +7,7 @@ const comeInOut = keyframes`
   transform: scale(0) rotate(0deg);
 }
 50% {
-  transform: scale(1) rotate(50deg);
+  transform: scale(1.2) rotate(50deg);
 }
 100% {
   transform: scale(0) rotate(180deg);
@@ -39,7 +39,7 @@ const OneSparkle = ({ colors = otherpasta, size }) => {
 
   return (
     <SparkleWrapper>
-      <SparkleSvg width={size} height={size} viewBox="0 0 68 68" fill="none">
+      <SparkleSvg width={size} height={size} viewBox="0 0 68 68" fill="none"  >
         <path d={path} fill={color}
         />
       </SparkleSvg>

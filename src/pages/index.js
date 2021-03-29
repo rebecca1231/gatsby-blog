@@ -32,20 +32,21 @@ const IndexPage = () => {
     ({ node }) => (slugObj[node.title] = node.keywords.split("."))
   )
 
-  useEffect(() => {
-    setTimeout(() => {
-      setWink(false)
-    }, 800)
-  })
-
   const [results, setResults] = useState(null)
   const [showSearch, setShowSearch] = useState(false)
   const [showSparkles, setShowSparkles] = useState(false)
-  const [wink, setWink] = useState(true)
+  const [wink, setWink] = useState(false)
 
   const showWink = () => {
     setWink(true)
+    setTimeout(() => {
+      setWink(false)
+    }, 800)
   }
+useEffect(()=> {
+  showWink()
+}, [])
+  
 
   const searchMethod = e => {
     const term = e.target.value.toLowerCase()
@@ -103,7 +104,11 @@ const IndexPage = () => {
     <Layout>
       <Head title="Blog" />
       <div className={blogStyles.space}>
-        <button className={blogStyles.feature} onMouseEnter={() => showWink()}>
+        <button
+          className={blogStyles.feature}
+          onClick={() => showWink()}
+          onMouseEnter={() => showWink()}
+        >
           <h1>
             Welcome
             {wink && (
