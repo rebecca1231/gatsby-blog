@@ -24,7 +24,7 @@ const IndexPage = () => {
     }
   `)
   const featuredArticle = data.allContentfulBlogPost.edges.filter(
-    ({ node }) => node.slug === "palindrome-checker"
+    ({ node }) => node.slug === "using-pinia-setup-and-testing-with-cypress"
   )
 
   const slugObj = {}
