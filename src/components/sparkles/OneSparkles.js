@@ -1,49 +1,54 @@
 // based on a tutorial by Josh W Comeau
 // https://www.joshwcomeau.com/react/animated-sparkles-in-react/
 
-import React, {useEffect, useRef} from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-import {random,} from "./sparkleHelpers"
+import {
+  range,
+  usePrefersReducedMotion,
+  useRandomInterval,
+  random,
+} from "./sparkleHelpers"
 import OneSparkle from './OneSparkle'
 
 const generateSparkle = color => {
-    const sparkle = {
-        id: String(random(10000, 99999)),
-        createdAt: Date.now(),
-        color,
-        size: 20,
-        style: {
-            top: '50%',
-            left: 0,
-        },
-    }
-    return sparkle
+  const sparkle = {
+    id: String(random(10000, 99999)),
+    createdAt: Date.now(),
+    color,
+    size: 20,
+    style: {
+      top: '50%',
+      left: 0,
+    },
+  }
+  return sparkle
 }
 
 const otherpasta = ["#AC92EB", "#4FC1EB", "#A0D568", "#FFC5E4", "#ED5564"]
 let counter = 0
 
-const OneSparkles = ({colors = otherpasta, children, ...delegated}) => {
-    const sparkleRef = useRef(null)
+const OneSparkles = ({ colors = otherpasta, children, ...delegated }) => {
+const sparkleRef = useRef(null)
 
-    let color = colors[counter]
-    const colorLen = colors.length
-    if (counter < colorLen - 1) {
-        counter++
-    } else {
-        counter = 0
-    }
+  let color = colors[counter]
+  const colorLen = colors.length
+  if (counter < colorLen-1) {
+    counter++
+  } else {
+    counter = 0
+  }
 
-    useEffect(() => {
-        sparkleRef.current
-    })
+  useEffect(()=> {
+      sparkleRef.current
+  })
 
-    const sparkles = []
+  const sparkles = []
 
-    return (
-        <OneSparkle
+  return (
+        <OneSparkle 
         />
-    )
+  )
 }
 
 const Wrapper = styled.span`

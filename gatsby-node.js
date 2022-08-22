@@ -1,9 +1,9 @@
 const path = require('path')
 
 module.exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions
-    const blogTemplate = path.resolve('./src/templates/index.js')
-    const res = await graphql(`
+  const { createPage } = actions
+  const blogTemplate = path.resolve('./src/templates/index.js')
+  const res = await graphql(`
         query {
             allContentfulBlogPost {
                 edges {
@@ -15,13 +15,13 @@ module.exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
-    res.data.allContentfulBlogPost.edges.forEach((edge) => {
-        createPage({
-            component: blogTemplate,
-            path: `/${edge.node.slug}`,
-            context: {
-                slug: edge.node.slug
-            }
-        })
+  res.data.allContentfulBlogPost.edges.forEach((edge) => {
+    createPage({
+      component: blogTemplate,
+      path: `/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug
+      }
     })
+  })
 }
