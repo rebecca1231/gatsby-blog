@@ -1,54 +1,34 @@
-require('dotenv').config({
-    path: `.env.${process.env.NODE_ENV || 'development'}`
-  })
+require("dotenv").config({
+    path: `.env.${process.env.NODE_ENV || 'development'}`,
+});
+
 module.exports = {
     siteMetadata: {
         title: "Rebecca's Blog",
         author: "Rebecca Hirai"
     },
     plugins: [
-        `gatsby-plugin-styled-components`,
-        'gatsby-plugin-react-helmet',
-        {
-            resolve: 'gatsby-source-contentful',
-            options: {
-                spaceId: process.env.CONTENTFUL_SPACE_ID,
-                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-            }
-        },
-   
+        "gatsby-transformer-sharp",
+        "gatsby-plugin-react-helmet",
+        "gatsby-plugin-sharp",
+        "gatsby-plugin-image",
         'gatsby-plugin-sass',
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: "gatsby-source-contentful",
             options: {
-                name: 'src',
-                path: `${__dirname}/src/`
-            }
+                spaceId: process.env.CONTENTFUL_SPACE_ID,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+                // host: process.env.CONTENTFUL_HOST
+            },
         },
         {
             resolve: `gatsby-plugin-nprogress`,
             options: {
-              // Setting a color is optional.
-              color: `teal`,
-              // Disable the loading spinner.
-              showSpinner: true,
+                // Setting a color is optional.
+                color: `teal`,
+                // Disable the loading spinner.
+                showSpinner: true,
             },
-          },
-        'gatsby-plugin-sharp',
-        // { //for use with markdown files!
-        //     resolve: 'gatsby-transformer-remark',
-        //     options: {
-        //         plugins: [
-        //             'gatsby-remark-relative-images',
-        //             {
-        //                 resolve: 'gatsby-remark-images',
-        //                 options: {
-        //                     maxWidth: 750,
-        //                     linkImagesToOriginal: false
-        //                 }
-        //             }
-        //         ]
-        //     }
-        // }
-    ]
-}
+        },
+    ],
+};

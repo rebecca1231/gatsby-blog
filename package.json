@@ -1,53 +1,70 @@
 {
   "name": "rebecca-blog",
+  "description": "Rebecca SWE Blog",
   "private": true,
-  "description": "Rebecca Hirai Blog",
-  "version": "0.1.0",
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
+  "version": "1.2.0",
+  "author": "Rebecca Hirai",
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^14.1.2",
-    "@contentful/rich-text-types": "^14.1.2",
-    "babel-plugin-prismjs": "^2.0.1",
-    "babel-plugin-styled-components": "^1.12.0",
-    "babel-preset-gatsby": "^0.10.0",
-    "emailjs-com": "^2.6.4",
-    "gatsby": "^2.30.1",
-    "gatsby-plugin-nprogress": "^3.1.0",
-    "gatsby-plugin-react-helmet": "^3.8.0",
-    "gatsby-plugin-sass": "^2.8.0",
-    "gatsby-plugin-sharp": "^2.12.0",
-    "gatsby-plugin-styled-components": "^4.1.0",
-    "gatsby-remark-images": "^3.9.0",
-    "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-source-contentful": "^2.3.56",
-    "gatsby-source-filesystem": "^2.9.0",
-    "gatsby-transformer-remark": "^2.14.0",
-    "markdown-it": "^12.0.4",
-    "node-sass": "^4.14.1",
-    "prismjs": "^1.23.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "@contentful/rich-text-plain-text-renderer": "^15.12.1",
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.12.1",
+    "babel-plugin-prismjs": "^2.1.0",
+    "gatsby": "^4.0.0",
+    "gatsby-plugin-image": "^2.0.0",
+    "gatsby-plugin-nprogress": "^4.21.0",
+    "gatsby-plugin-react-helmet": "^5.0.0",
+    "gatsby-plugin-sass": "^5.21.0",
+    "gatsby-plugin-sharp": "^4.0.0",
+    "gatsby-source-contentful": "^7.0.0",
+    "gatsby-transformer-sharp": "^4.0.0",
+    "gh-pages": "^3.1.0",
+    "lodash": "^4.17.21",
+    "markdown-it": "^13.0.1",
+    "nprogress": "^0.2.0",
+    "postcss": "^8.4.16",
+    "prismjs": "^1.28.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.2.1"
+    "reading-time": "^2.0.0-1",
+    "sass": "^1.54.4",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "env-cmd": "^10.1.0",
-    "prettier": "2.1.1"
+    "contentful-import": "^8.0.0",
+    "gatsby-provision-contentful": "0.0.3",
+    "netlify-cli": "^10.0.0",
+    "prettier": "^2.7.1"
   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "homepage": "https://blog.rebeccahirai.com",
+  "keywords": [
+    "gatsby",
+    "contentful",
+    "blog",
+    "software-development",
+    "programming"
+  ],
+  "license": "MIT",
+  "main": "n/a",
   "repository": {
     "type": "git",
     "url": "https://github.com/rebecca1231/gatsby-blog"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "scripts": {
+    "dev": "gatsby develop",
+    "build": "gatsby build",
+    "heroku-postbuild": "gatsby build",
+    "serve": "gatsby serve",
+    "postinstall": "node ./bin/hello.js",
+    "setup": "node ./bin/setup.js",
+    "netlify:login": "netlify login",
+    "netlify:deploy": "netlify deploy -d public -p",
+    "gatsby-provision": "gatsby-provision-contentful --contentful-data-path='./contentful/export.json' --space-id=$CONTENTFUL_SPACE_ID --management-token=$CONTENTFUL_MANAGEMENT_TOKEN"
   }
 }
