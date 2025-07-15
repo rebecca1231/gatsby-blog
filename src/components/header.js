@@ -37,7 +37,7 @@ const Header = () => {
             <a
               className={headerStyles.navItem}
               activeclassname={headerStyles.activeNavItem}
-              href="https://rebeccahirai.com/about"
+              href="https://rebeccapage.org/about"
             >
               About
             </a>
@@ -46,7 +46,7 @@ const Header = () => {
             <a
               className={headerStyles.navItem}
               activeclassname={headerStyles.activeNavItem}
-              href="https://rebeccahirai.com/contact"
+              href="https://rebeccapage.org/contact"
             >
               Contact
             </a>
@@ -55,7 +55,7 @@ const Header = () => {
             <a
               className={headerStyles.navItem}
               activeclassname={headerStyles.activeNavItem}
-              href="https://rebeccahirai.com"
+              href="https://rebeccapage.org"
             >
               Portfolio
             </a>

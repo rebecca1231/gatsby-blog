@@ -5,7 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: "Rebecca's Blog",
-    author: "Rebecca Hirai"
+    author: "Rebecca Page"
   },
   plugins: [
     "gatsby-transformer-sharp",

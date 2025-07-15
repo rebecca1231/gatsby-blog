@@ -3,7 +3,7 @@
   "description": "Rebecca SWE Blog",
   "private": true,
   "version": "1.2.0",
-  "author": "Rebecca Hirai",
+  "author": "Rebecca Page",
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
     "@contentful/rich-text-react-renderer": "^15.12.1",
@@ -22,8 +22,8 @@
     "markdown-it": "^13.0.1",
     "nprogress": "^0.2.0",
     "prismjs": "^1.28.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "reading-time": "^2.0.0-1",
     "sass": "^1.54.4",
@@ -36,9 +36,9 @@
     "prettier": "^2.7.1"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
-  "homepage": "https://blog.rebeccahirai.com",
+  "homepage": "https://blog.rebeccpage.org",
   "keywords": [
     "gatsby",
     "contentful",
@@ -47,7 +47,6 @@
     "programming"
   ],
   "license": "MIT",
-  "main": "n/a",
   "repository": {
     "type": "git",
     "url": "https://github.com/rebecca1231/gatsby-blog"
